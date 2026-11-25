@@ -210,7 +210,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - **Trois façons de déposer**, qui aboutissent toutes au dossier de l'enfant :
   1. depuis une **communication** (mot du personnel, message, journal de bord) que les parents voient;
   2. directement dans le **répertoire de documents** de l'enfant;
-  3. pour **tout un groupe** : l'éducatrice dépose une fois et le média apparaît dans la partie partagée du dossier de chaque enfant du groupe (ex. photo de l'activité, sortie).
+  3. pour **tout un groupe** : l'éducatrice dépose une fois et le média apparaît dans la partie partagée du dossier de **tous les enfants du groupe** (ex. photo de l'activité, sortie), présents ou non ce jour-là.
 - **Consentement photo** : au dépôt d'un média de groupe, l'application signale les enfants du groupe sans consentement photo, pour que l'éducatrice vérifie avant de publier (règle exacte à décider, voir questions).
 - **Répertoire de l'enfant** : vue chronologique, filtres par type et par période, téléchargement par le parent.
 - **Accès après le départ** : les anciens parents gardent un accès en lecture seule à la partie partagée pendant une durée **configurable par le milieu** (par défaut **1 an**, réglable en années). Rappel envoyé avant la fin de l'accès, avec **téléchargement de l'ensemble en archive** (.zip).
@@ -233,7 +233,9 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - Empêcher les captures d'écran ou la rediffusion par un parent (impossible techniquement : on affiche plutôt un rappel des conditions d'utilisation).
 
 **❓ Questions**
-- Un média de groupe va-t-il dans le dossier de **tous** les enfants du groupe, ou seulement des enfants présents ce jour-là, ou de ceux que l'éducatrice coche ?
+- **Groupes non fixes** : dans certaines garderies, la composition des groupes change (rotation, regroupements du matin et du soir, enfants à temps partiel). Qui reçoit alors un média de groupe ? Pistes proposées, à décider :
+  - un **historique d'appartenance daté** (l'enfant est dans tel groupe du… au…), et la liste des destinataires est **figée à la date de publication** : un enfant qui arrive plus tard dans le groupe ne voit pas les anciennes photos, un enfant qui part garde celles de sa période;
+  - des **regroupements temporaires** (ex. groupe du soir, sortie) créés pour l'occasion, avec une liste d'enfants pré-remplie que l'éducatrice peut ajuster avant de publier.
 - Si un enfant sans consentement apparaît sur une photo de groupe : on bloque le dépôt, ou l'éducatrice confirme qu'il n'y figure pas ?
 - Les parents peuvent-ils déposer dans le répertoire, ou seulement via un message ?
 - Faut-il aussi des documents **internes** (équipe seulement), rattachés aux notes au dossier ?
@@ -335,3 +337,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Les notes au dossier sont internes; les parents voient seulement les mots du personnel et les observations de la journée. |
 | 2026-11-25 | Ajout des médias (photos, vidéos, documents) au dossier, avec médias de groupe, analyse des fichiers et accès des anciens parents pendant une durée configurable (1 an par défaut). |
 | 2026-11-25 | Plan réorganisé par fonctionnalité (inclus / hors périmètre / questions). |
+| 2026-11-25 | Un média de groupe est accessible à tous les enfants du groupe. |
