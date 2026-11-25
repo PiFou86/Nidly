@@ -32,6 +32,8 @@ Principes directeurs :
 | **Organisation** | L'entité juridique (ex. un CPE ou une entreprise qui exploite une ou plusieurs garderies). |
 | **Installation** | Un lieu physique (bâtiment, adresse, permis). Une organisation peut en avoir plusieurs. |
 | **Groupe** | Les enfants pris en charge ensemble dans une installation (ex. « Les Poussins », 18 mois–3 ans). « Classe » est un synonyme : on utilise **groupe** partout. |
+| **Groupe d'attache** | Le groupe fixe de l'enfant. |
+| **Regroupement temporaire** | Un enfant placé pour un temps dans un autre groupe, quand il n'y a pas assez d'enfants pour un groupe (ex. début ou fin de journée, journée creuse). |
 | **Fiche enfant** | Les informations administratives, médicales et de contact de l'enfant. |
 | **Journal de bord** | Les observations quotidiennes saisies par l'équipe pour un enfant. |
 | **Mot du personnel** | Un message ou commentaire de l'équipe adressé à la famille. |
@@ -94,7 +96,8 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 
 **Inclus**
 - Une organisation possède une ou plusieurs installations; une installation a des groupes (capacité, tranche d'âge).
-- Un enfant est inscrit dans une installation et rattaché à un groupe.
+- Un enfant est inscrit dans une installation et rattaché à un **groupe d'attache** (fixe), avec un historique daté de ses changements de groupe d'attache.
+- **Regroupements temporaires** : quand il n'y a pas assez d'enfants, des enfants sont placés pour un temps dans un autre groupe. Le tableau des présences montre où se trouve chaque enfant à l'instant présent; le groupe d'attache ne change pas.
 - Une éducatrice peut être assignée à plusieurs installations et plusieurs groupes, avec un rôle par installation.
 - Invitation des comptes (parents, personnel) par courriel; liens parent ↔ enfant.
 - Fin d'inscription d'un enfant : la date de départ fait passer les parents en « ancien parent ».
@@ -104,7 +107,6 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - Inscription en ligne et liste d'attente.
 
 **❓ Questions**
-- Un enfant peut-il changer de groupe en cours de journée (regroupement de fin de journée) ?
 - Affichage des ratios éducatrice/enfants en temps réel ?
 
 ---
@@ -210,7 +212,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - **Trois façons de déposer**, qui aboutissent toutes au dossier de l'enfant :
   1. depuis une **communication** (mot du personnel, message, journal de bord) que les parents voient;
   2. directement dans le **répertoire de documents** de l'enfant;
-  3. pour **tout un groupe** : l'éducatrice dépose une fois et le média apparaît dans la partie partagée du dossier de **tous les enfants du groupe** (ex. photo de l'activité, sortie), présents ou non ce jour-là.
+  3. pour **tout un groupe** : l'éducatrice dépose une fois et le média apparaît dans la partie partagée du dossier de **tous les enfants du groupe** (ex. photo de l'activité, sortie), présents ou non ce jour-là. « Groupe » veut dire ici le **groupe d'attache**, à la date de publication : un enfant qui arrive plus tard dans le groupe ne voit pas les anciennes photos, un enfant qui change de groupe garde celles de sa période.
 - **Consentement photo** : au dépôt d'un média de groupe, l'application signale les enfants du groupe sans consentement photo, pour que l'éducatrice vérifie avant de publier (règle exacte à décider, voir questions).
 - **Répertoire de l'enfant** : vue chronologique, filtres par type et par période, téléchargement par le parent.
 - **Accès après le départ** : les anciens parents gardent un accès en lecture seule à la partie partagée pendant une durée **configurable par le milieu** (par défaut **1 an**, réglable en années). Rappel envoyé avant la fin de l'accès, avec **téléchargement de l'ensemble en archive** (.zip).
@@ -233,9 +235,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - Empêcher les captures d'écran ou la rediffusion par un parent (impossible techniquement : on affiche plutôt un rappel des conditions d'utilisation).
 
 **❓ Questions**
-- **Groupes non fixes** : dans certaines garderies, la composition des groupes change (rotation, regroupements du matin et du soir, enfants à temps partiel). Qui reçoit alors un média de groupe ? Pistes proposées, à décider :
-  - un **historique d'appartenance daté** (l'enfant est dans tel groupe du… au…), et la liste des destinataires est **figée à la date de publication** : un enfant qui arrive plus tard dans le groupe ne voit pas les anciennes photos, un enfant qui part garde celles de sa période;
-  - des **regroupements temporaires** (ex. groupe du soir, sortie) créés pour l'occasion, avec une liste d'enfants pré-remplie que l'éducatrice peut ajuster avant de publier.
+- Photo prise pendant un **regroupement temporaire** : proposition par défaut, elle va aux enfants présents dans le regroupement, et l'éducatrice peut ajuster la liste avant de publier. À confirmer.
 - Si un enfant sans consentement apparaît sur une photo de groupe : on bloque le dépôt, ou l'éducatrice confirme qu'il n'y figure pas ?
 - Les parents peuvent-ils déposer dans le répertoire, ou seulement via un message ?
 - Faut-il aussi des documents **internes** (équipe seulement), rattachés aux notes au dossier ?
@@ -338,3 +338,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Ajout des médias (photos, vidéos, documents) au dossier, avec médias de groupe, analyse des fichiers et accès des anciens parents pendant une durée configurable (1 an par défaut). |
 | 2026-11-25 | Plan réorganisé par fonctionnalité (inclus / hors périmètre / questions). |
 | 2026-11-25 | Un média de groupe est accessible à tous les enfants du groupe. |
+| 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un regroupement temporaire quand il n'y a pas assez d'enfants. |
