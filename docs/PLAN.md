@@ -33,7 +33,7 @@ Principes directeurs :
 | **Installation** | Un lieu physique (bâtiment, adresse, permis). Une organisation peut en avoir plusieurs. |
 | **Groupe** | Les enfants pris en charge ensemble dans une installation (ex. « Les Poussins », 18 mois–3 ans). « Classe » est un synonyme : on utilise **groupe** partout. |
 | **Groupe d'attache** | Le groupe fixe de l'enfant. |
-| **Groupe éphémère** | Un enfant placé pour un temps dans un autre groupe, quand il n'y a pas assez d'enfants pour un groupe (ex. début ou fin de journée, journée creuse). |
+| **Groupe éphémère** | Un groupe formé pour un temps, en réunissant des enfants de plusieurs groupes d'attache quand il n'y a pas assez d'enfants (ex. début ou fin de journée, journée creuse). |
 | **Fiche enfant** | Les informations administratives, médicales et de contact de l'enfant. |
 | **Journal de bord** | Les observations quotidiennes saisies par l'équipe pour un enfant. |
 | **Mot du personnel** | Un message ou commentaire de l'équipe adressé à la famille. |
