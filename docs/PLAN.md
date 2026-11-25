@@ -33,8 +33,7 @@ Principes directeurs :
 |---|---|
 | **Organisation** | L'entité juridique (ex. un CPE ou une entreprise qui exploite une ou plusieurs garderies). |
 | **Installation** | Un lieu physique (bâtiment, adresse, permis). Une organisation peut en avoir plusieurs. |
-| **Groupe** | Un ensemble d'enfants pris en charge ensemble dans une installation (ex. « Les Poussins », 18 mois–3 ans). |
-| **Classe / local** | ❓ Le local physique. Est-ce distinct du groupe, ou est-ce le même concept ? |
+| **Groupe** | Un ensemble d'enfants pris en charge ensemble dans une installation (ex. « Les Poussins », 18 mois–3 ans). « Classe » est un synonyme : on utilise **groupe** partout dans l'application. |
 | **Fiche enfant** | Les informations administratives, médicales et de contact de l'enfant. |
 | **Journal de bord** | Les observations quotidiennes saisies par l'équipe pour un enfant. |
 | **Dossier** | Les notes plus durables (suivi, développement, rencontres) liées à l'enfant. |
@@ -77,13 +76,13 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres éléments seu
 | Écrire à l'équipe d'un groupe | ➖ | ✅ | ✅ | ❌ |
 | Déclarer un incident | ❌ | ✅ | ✅ | ❌ |
 | Voir les incidents | ➖ | ✅ | ✅ | ✅ |
-| Notes au dossier | ❓ | ✅ (créer) | ✅ | 👁️ |
+| Notes au dossier | ❌ | ✅ (créer) | ✅ | 👁️ |
 | Configurer les critères d'observation | ❌ | ❌ | ✅ | ✅ |
 | Gérer groupes et assignations | ❌ | ❌ | ✅ | ✅ |
 | Gérer les installations | ❌ | ❌ | ❌ | ✅ |
 | Consulter le journal d'audit | ❌ | ❌ | ✅ | ✅ |
 
-❓ Les notes au dossier sont-elles visibles par les parents ? On peut prévoir deux niveaux : **notes partagées** (visibles par le parent) et **notes internes** (équipe seulement).
+Les **notes au dossier sont internes** : les parents ne les voient jamais. Ce que le parent voit, ce sont les **mots du personnel** (messages et commentaires adressés à la famille) et les **observations de la journée** (journal de bord).
 
 ---
 
@@ -139,6 +138,7 @@ Types de critères à prévoir : **échelle**, **choix unique**, **choix multipl
 - Saisie **par groupe** : grille enfants × critères, avec valeurs pré-remplies et action « appliquer à tous » (ex. activité du matin).
 - Saisie **par enfant** : fiche du jour d'un seul enfant.
 - Pensée pour la **tablette** et une utilisation d'une seule main.
+- Le parent voit les observations de la journée et le **mot du personnel** (commentaire libre adressé à la famille).
 - Le parent reçoit le résumé de la journée (❓ en continu ou à heure fixe, ex. 16 h ?).
 
 ---
@@ -177,7 +177,7 @@ Identité, date de naissance, groupe, contacts d'urgence, personnes autorisées 
 ### 8.4 Notes au dossier
 
 - Notes datées et signées (auteur), classées par catégorie (développement, comportement, rencontre parent, santé…).
-- Deux niveaux de visibilité : **interne** / **partagée avec le parent**.
+- Visibles par l'équipe seulement (éducatrices du groupe et direction), **jamais par les parents**. Ce qu'on veut partager avec la famille passe par un mot du personnel ou le journal de bord.
 - Pas de suppression : modifications tracées.
 
 ---
@@ -227,7 +227,7 @@ Les données touchent des **mineurs** et incluent des **renseignements de santé
 
 ### Phase 3 — Dossier et suivi
 - **Incidents** avec notification au parent.
-- **Notes au dossier** (interne / partagée).
+- **Notes au dossier** (internes, équipe seulement).
 - **Critères d'observation configurables** par garderie.
 - Journal d'audit consultable.
 
@@ -239,14 +239,12 @@ Les données touchent des **mineurs** et incluent des **renseignements de santé
 ## 12. Questions ouvertes
 
 1. Public cible au départ : CPE, garderies subventionnées, privées, milieux familiaux ? Une seule garderie pilote ?
-2. « Groupe » et « classe » : même chose ou concepts distincts ?
-3. Le parent peut-il pointer l'arrivée et le départ lui-même ?
-4. Les notes au dossier sont-elles visibles par les parents ?
-5. Le résumé de la journée est-il envoyé en continu ou à heure fixe ?
-6. Le parent écrit-il à l'équipe du groupe ou à une éducatrice précise ?
-7. Quelles contraintes réglementaires de présence ou de rapport faut-il couvrir (ministère de la Famille) ?
-8. Projet personnel, produit commercial, ou logiciel libre ?
-9. Préférences techniques (langage, framework, hébergement) ?
+2. Le parent peut-il pointer l'arrivée et le départ lui-même ?
+3. Le résumé de la journée est-il envoyé en continu ou à heure fixe ?
+4. Le parent écrit-il à l'équipe du groupe ou à une éducatrice précise ?
+5. Quelles contraintes réglementaires de présence ou de rapport faut-il couvrir (ministère de la Famille) ?
+6. Projet personnel, produit commercial, ou logiciel libre ?
+7. Préférences techniques (langage, framework, hébergement) ?
 
 ---
 
@@ -255,3 +253,5 @@ Les données touchent des **mineurs** et incluent des **renseignements de santé
 | Date | Décision |
 |---|---|
 | 2026-11-25 | Création du plan initial. |
+| 2026-11-25 | « Groupe » et « classe » sont synonymes; on utilise **groupe**. |
+| 2026-11-25 | Les notes au dossier sont internes; les parents voient seulement les mots du personnel et les observations de la journée. |
