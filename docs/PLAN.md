@@ -33,7 +33,7 @@ Principes directeurs :
 | **Installation** | Un lieu physique (bâtiment, adresse, permis). Une organisation peut en avoir plusieurs. |
 | **Groupe** | Les enfants pris en charge ensemble dans une installation (ex. « Les Poussins », 18 mois–3 ans). « Classe » est un synonyme : on utilise **groupe** partout. |
 | **Groupe d'attache** | Le groupe fixe de l'enfant. |
-| **Regroupement temporaire** | Un enfant placé pour un temps dans un autre groupe, quand il n'y a pas assez d'enfants pour un groupe (ex. début ou fin de journée, journée creuse). |
+| **Groupe éphémère** | Un enfant placé pour un temps dans un autre groupe, quand il n'y a pas assez d'enfants pour un groupe (ex. début ou fin de journée, journée creuse). |
 | **Fiche enfant** | Les informations administratives, médicales et de contact de l'enfant. |
 | **Journal de bord** | Les observations quotidiennes saisies par l'équipe pour un enfant. |
 | **Mot du personnel** | Un message ou commentaire de l'équipe adressé à la famille. |
@@ -97,7 +97,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 **Inclus**
 - Une organisation possède une ou plusieurs installations; une installation a des groupes (capacité, tranche d'âge).
 - Un enfant est inscrit dans une installation et rattaché à un **groupe d'attache** (fixe), avec un historique daté de ses changements de groupe d'attache.
-- **Regroupements temporaires** : quand il n'y a pas assez d'enfants, des enfants sont placés pour un temps dans un autre groupe. Le tableau des présences montre où se trouve chaque enfant à l'instant présent; le groupe d'attache ne change pas.
+- **Groupes éphémères** : quand il n'y a pas assez d'enfants, des enfants sont placés pour un temps dans un autre groupe. Le tableau des présences montre où se trouve chaque enfant à l'instant présent; le groupe d'attache ne change pas.
 - Une éducatrice peut être assignée à plusieurs installations et plusieurs groupes, avec un rôle par installation.
 - Invitation des comptes (parents, personnel) par courriel; liens parent ↔ enfant.
 - Fin d'inscription d'un enfant : la date de départ fait passer les parents en « ancien parent ».
@@ -235,7 +235,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - Empêcher les captures d'écran ou la rediffusion par un parent (impossible techniquement : on affiche plutôt un rappel des conditions d'utilisation).
 
 **❓ Questions**
-- Photo prise pendant un **regroupement temporaire** : proposition par défaut, elle va aux enfants présents dans le regroupement, et l'éducatrice peut ajuster la liste avant de publier. À confirmer.
+- Photo prise pendant un **groupe éphémère** : proposition par défaut, elle va aux enfants présents dans le groupe éphémère, et l'éducatrice peut ajuster la liste avant de publier. À confirmer.
 - Si un enfant sans consentement apparaît sur une photo de groupe : on bloque le dépôt, ou l'éducatrice confirme qu'il n'y figure pas ?
 - Les parents peuvent-ils déposer dans le répertoire, ou seulement via un message ?
 - Faut-il aussi des documents **internes** (équipe seulement), rattachés aux notes au dossier ?
@@ -338,4 +338,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Ajout des médias (photos, vidéos, documents) au dossier, avec médias de groupe, analyse des fichiers et accès des anciens parents pendant une durée configurable (1 an par défaut). |
 | 2026-11-25 | Plan réorganisé par fonctionnalité (inclus / hors périmètre / questions). |
 | 2026-11-25 | Un média de groupe est accessible à tous les enfants du groupe. |
-| 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un regroupement temporaire quand il n'y a pas assez d'enfants. |
+| 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un groupe éphémère quand il n'y a pas assez d'enfants. |
