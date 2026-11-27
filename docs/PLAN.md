@@ -3,7 +3,7 @@
 > Document vivant. Il sert de point de départ et sera modifié au fur et à mesure.
 > Le plan est organisé **par fonctionnalité**. Pour chacune : l'objectif, ce qui est **inclus**, ce qui est **hors périmètre** (les limites) et les **questions ouvertes** (❓).
 >
-> Dernière mise à jour : 2026-11-25
+> Dernière mise à jour : 2026-11-27
 
 ---
 
@@ -46,7 +46,7 @@ Principes directeurs :
 
 ### 3.1 Rôles
 
-- **Parent / tuteur** : voit uniquement ses propres enfants. Plusieurs tuteurs par enfant (garde partagée possible).
+- **Parent / tuteur** : voit uniquement ses propres enfants. Un enfant peut avoir **plusieurs tuteurs**, chacun avec **son propre compte** pour se connecter (garde partagée possible).
 - **Ancien parent** : parent dont l'enfant ne fréquente plus le milieu. Accès en **lecture seule** à la partie partagée du dossier, pendant une durée configurable (voir F6).
 - **Éducatrice / éducateur** : assigné(e) à une ou plusieurs installations, et à un ou plusieurs groupes.
 - **Direction d'installation** : gère une installation (enfants, groupes, personnel, paramètres).
@@ -100,6 +100,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - **Groupes éphémères** : quand il n'y a pas assez d'enfants, des enfants sont placés pour un temps dans un autre groupe. Le tableau des présences montre où se trouve chaque enfant à l'instant présent; le groupe d'attache ne change pas.
 - Une éducatrice peut être assignée à plusieurs installations et plusieurs groupes, avec un rôle par installation.
 - Invitation des comptes (parents, personnel) par courriel; liens parent ↔ enfant.
+- **Plusieurs tuteurs par enfant**, chacun avec son compte et ses préférences de notification. Un même tuteur peut être lié à plusieurs enfants (fratrie).
 - Fin d'inscription d'un enfant : la date de départ fait passer les parents en « ancien parent ».
 
 **Hors périmètre**
@@ -189,6 +190,10 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 
 **Inclus**
 - Le parent écrit **à l'équipe du groupe** de son enfant; l'équipe répond; la direction voit les fils de son installation.
+- Le personnel (éducatrices, direction) choisit le **destinataire** d'un message :
+  - **le groupe** : tous les tuteurs de tous les enfants du groupe;
+  - **l'enfant** : l'ensemble de ses tuteurs;
+  - **un tuteur en particulier** : seul ce tuteur voit le message et la conversation.
 - Annonces de **groupe** et d'**installation** (fermeture, sortie, rappel).
 - **Pièces jointes** (photos, vidéos, documents) dans les deux sens, versées au dossier de l'enfant (voir F6).
 - Notifications courriel et web, préférences réglables par le parent.
@@ -199,6 +204,8 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 
 **❓ Questions**
 - Garder aussi la possibilité d'écrire à une éducatrice précise ?
+- Quand un tuteur écrit à l'équipe, sa conversation est-elle visible par les autres tuteurs de l'enfant, ou seulement par lui ?
+- Garde partagée avec restrictions (ex. ordonnance du tribunal) : faut-il pouvoir limiter ce qu'un tuteur voit ou reçoit ?
 - Plages horaires de la messagerie (éviter les notifications à 22 h au personnel) ?
 
 ---
@@ -338,4 +345,5 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Ajout des médias (photos, vidéos, documents) au dossier, avec médias de groupe, analyse des fichiers et accès des anciens parents pendant une durée configurable (1 an par défaut). |
 | 2026-11-25 | Plan réorganisé par fonctionnalité (inclus / hors périmètre / questions). |
 | 2026-11-25 | Un média de groupe est accessible à tous les enfants du groupe. |
+| 2026-11-27 | Un enfant peut avoir plusieurs tuteurs, chacun avec son compte. Le personnel peut écrire au groupe, à l'enfant (tous ses tuteurs) ou à un tuteur en particulier. |
 | 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un groupe éphémère quand il n'y a pas assez d'enfants. |
