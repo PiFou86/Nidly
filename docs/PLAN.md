@@ -345,5 +345,5 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Ajout des médias (photos, vidéos, documents) au dossier, avec médias de groupe, analyse des fichiers et accès des anciens parents pendant une durée configurable (1 an par défaut). |
 | 2026-11-25 | Plan réorganisé par fonctionnalité (inclus / hors périmètre / questions). |
 | 2026-11-25 | Un média de groupe est accessible à tous les enfants du groupe. |
-| 2026-11-27 | Un enfant peut avoir plusieurs tuteurs, chacun avec son compte. Le personnel peut écrire au groupe, à l'enfant (tous ses tuteurs) ou à un tuteur en particulier. |
 | 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un groupe éphémère quand il n'y a pas assez d'enfants. |
+| 2026-11-27 | Un enfant peut avoir plusieurs tuteurs, chacun avec son compte. Le personnel peut écrire au groupe, à l'enfant (tous ses tuteurs) ou à un tuteur en particulier. |
