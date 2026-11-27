@@ -309,7 +309,53 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 
 ---
 
-## 6. Découpage proposé (MVP et phases)
+## 6. Choix techniques
+
+### 6.1 Décidé
+
+- **Backend : .NET 10** (ASP.NET Core). .NET 10 est une version LTS, supportée jusqu'en novembre 2028.
+
+### 6.2 Base de données — à trancher
+
+**Recommandation : PostgreSQL**, avec Entity Framework Core (fournisseur Npgsql).
+
+- Gratuit et libre, sans coût de licence quand le nombre d'installations augmente.
+- **Row-Level Security** : la base elle-même peut empêcher une organisation de voir les données d'une autre (multi-locataire, section 5.2), en plus des contrôles du code.
+- **JSONB** : pratique pour stocker les réponses aux critères configurables du journal de bord (F4), qui varient d'une garderie à l'autre.
+- Offert en service géré dans les régions canadiennes des grands hébergeurs (Azure Canada Central, AWS ca-central-1, et d'autres), ce qui aide pour la Loi 25.
+- Très bien supporté par EF Core et par .NET Aspire pour le développement local.
+
+Alternatives :
+- **SQL Server / Azure SQL** : l'intégration la plus naturelle avec .NET et l'outillage Microsoft, et des tables temporelles utiles pour l'historique. En contrepartie, la licence ou le service géré coûtent plus cher.
+- **SQLite** : seulement pour les tests ou une démo locale, pas pour la production multi-garderie.
+
+Dans tous les cas, les **fichiers (F6)** ne vont pas dans la base, mais dans un stockage objet privé hébergé au Canada (Azure Blob Storage ou S3 compatible), la base ne gardant que les métadonnées.
+
+### 6.3 Frontend — à trancher
+
+Contraintes qui pèsent dans le choix : saisie rapide sur **tablette**, Wi-Fi parfois instable en garderie, **PWA** (installable, notifications), prise de photos et vidéos, et peut-être une application mobile plus tard.
+
+**Recommandation : React + TypeScript** (Vite), en PWA, qui consomme une API ASP.NET Core.
+
+- Le meilleur écosystème pour les PWA, le mode hors ligne (service workers, file d'attente de saisies) et l'accès à la caméra.
+- Chemin simple vers une application mobile plus tard (Capacitor ou React Native) en réutilisant le code.
+- Grand choix de composants accessibles et adaptés au tactile.
+- En contrepartie : deux langages (C# et TypeScript); on génère le client TypeScript à partir de la spécification OpenAPI de l'API pour limiter la duplication.
+
+Alternatives :
+- **Blazor WebAssembly (.NET 10)** : tout en C#, modèles et validations partagés avec le backend. C'est le choix le plus productif si on veut rester dans un seul langage. Limites : premier téléchargement plus lourd sur tablette, mode hors ligne et écosystème de composants moins riches. À éviter en mode *Blazor Server*, qui exige une connexion permanente (mauvais avec un Wi-Fi instable).
+- **Vue 3 + TypeScript** : mêmes avantages que React pour la PWA, avec une courbe d'apprentissage souvent jugée plus douce; écosystème mobile un peu plus restreint.
+
+### 6.4 Autres briques à prévoir
+
+- **Authentification** : ASP.NET Core Identity ou un fournisseur OpenID Connect; 2FA pour le personnel.
+- **Tâches de fond** : analyse antivirus (ClamAV en conteneur), réencodage des médias, notifications, purge à échéance (services hébergés .NET ou Hangfire).
+- **Temps réel** : SignalR pour la messagerie et le tableau des présences.
+- **Développement local** : .NET Aspire pour lancer l'API, la base, le stockage et ClamAV ensemble.
+
+---
+
+## 7. Découpage proposé (MVP et phases)
 
 | Phase | Contenu |
 |---|---|
@@ -324,18 +370,19 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 
 ---
 
-## 7. Questions ouvertes générales
+## 8. Questions ouvertes générales
 
 1. Public cible au départ : CPE, garderies subventionnées, privées, milieux familiaux ? Une garderie pilote ?
 2. Contraintes réglementaires de présence ou de rapport (ministère de la Famille) ?
 3. Projet personnel, produit commercial, ou logiciel libre ?
-4. Préférences techniques (langage, framework, hébergement) ?
+4. Base de données et frontend : voir les recommandations de la section 6.
+5. Hébergeur (Azure, AWS, hébergeur québécois) ?
 
 Les questions propres à chaque fonctionnalité sont dans sa section.
 
 ---
 
-## 8. Journal des décisions
+## 9. Journal des décisions
 
 | Date | Décision |
 |---|---|
@@ -347,3 +394,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Un média de groupe est accessible à tous les enfants du groupe. |
 | 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un groupe éphémère quand il n'y a pas assez d'enfants. |
 | 2026-11-27 | Un enfant peut avoir plusieurs tuteurs, chacun avec son compte. Le personnel peut écrire au groupe, à l'enfant (tous ses tuteurs) ou à un tuteur en particulier. |
+| 2026-11-27 | Backend en .NET 10. Base de données et frontend à trancher (section 6). |
