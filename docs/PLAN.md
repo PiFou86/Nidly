@@ -314,8 +314,10 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 ### 6.1 Décidé
 
 - **Backend : .NET 10** (ASP.NET Core). .NET 10 est une version LTS, supportée jusqu'en novembre 2028.
+- **Frontend : React + TypeScript** (Vite), en PWA, qui consomme l'API ASP.NET Core. Client TypeScript généré à partir de la spécification OpenAPI.
+- **Niveau de sécurité visé : maximal** (voir section 6.5).
 
-### 6.2 Base de données — à trancher
+### 6.2 Base de données — à trancher (PostgreSQL recommandé)
 
 **Recommandation : PostgreSQL**, avec Entity Framework Core (fournisseur Npgsql).
 
@@ -331,7 +333,9 @@ Alternatives :
 
 Dans tous les cas, les **fichiers (F6)** ne vont pas dans la base, mais dans un stockage objet privé hébergé au Canada (Azure Blob Storage ou S3 compatible), la base ne gardant que les métadonnées.
 
-### 6.3 Frontend — à trancher
+### 6.3 Frontend — décidé : React + TypeScript
+
+Raisons du choix et alternatives écartées, pour mémoire.
 
 Contraintes qui pèsent dans le choix : saisie rapide sur **tablette**, Wi-Fi parfois instable en garderie, **PWA** (installable, notifications), prise de photos et vidéos, et peut-être une application mobile plus tard.
 
@@ -352,6 +356,34 @@ Alternatives :
 - **Tâches de fond** : analyse antivirus (ClamAV en conteneur), réencodage des médias, notifications, purge à échéance (services hébergés .NET ou Hangfire).
 - **Temps réel** : SignalR pour la messagerie et le tableau des présences.
 - **Développement local** : .NET Aspire pour lancer l'API, la base, le stockage et ClamAV ensemble.
+
+### 6.5 Qualité et sécurité du développement
+
+Objectif : **sécurité maximale**. Aucune modification n'est fusionnée sans passer toutes les étapes ci-dessous (« définition de terminé »).
+
+**Référentiel**
+- **OWASP ASVS niveau 2** au minimum pour toute l'application, et niveau 3 pour l'authentification, les permissions, les données de santé et les fichiers déposés.
+- **Modèle de menaces** court rédigé pour chaque fonctionnalité (F1 à F8) avant son développement.
+
+**Tests**
+- **Couverture de plus de 80 %** (lignes et branches), mesurée séparément pour le backend (xUnit + coverlet) et le frontend (Vitest). La CI bloque une PR qui fait passer la couverture sous le seuil.
+- **Tests de permissions générés à partir de la matrice** (section 3.3) : pour chaque action, chaque rôle et chaque portée, un test vérifie que l'accès est accordé ou refusé, y compris l'accès d'une organisation aux données d'une autre et d'un tuteur aux informations d'un autre tuteur.
+- **Tests de bout en bout (e2e)** avec Playwright sur les parcours essentiels, pour chaque rôle : pointage des présences, saisie du journal, messagerie, dépôt d'un média, consultation par un parent, accès d'un ancien parent.
+
+**Tests de sécurité à chaque ajout ou modification** (dans la CI de chaque PR)
+- **Analyse statique** du code (SAST), par exemple CodeQL ou Semgrep, sur C# et TypeScript.
+- **Analyse des dépendances** vulnérables (Dependabot, `dotnet list package --vulnerable`, `npm audit`) et des **secrets** commis par erreur.
+- **Analyse dynamique** (DAST) avec OWASP ZAP sur l'environnement de test e2e.
+- **Tests de dépôt de fichiers** malveillants : fichier test EICAR, faux formats, fichiers polyglottes, fichiers trop gros.
+- Vérification des en-têtes de sécurité (CSP stricte, HSTS…) et de la limitation de débit.
+
+**Revue de code**
+- **Revue par un autre agent** à chaque PR (un agent distinct de celui qui a écrit le code), avec une attention particulière à la sécurité et aux permissions.
+- **Approbation humaine** obligatoire avant la fusion. La branche `main` est protégée : CI verte, revue de l'agent et approbation requises.
+
+**Avant la mise en production**
+- **Test d'intrusion** externe, puis au moins une fois par an.
+- EFVP (Loi 25) complétée et plan de réponse aux incidents de confidentialité en place.
 
 ---
 
@@ -375,7 +407,7 @@ Alternatives :
 1. Public cible au départ : CPE, garderies subventionnées, privées, milieux familiaux ? Une garderie pilote ?
 2. Contraintes réglementaires de présence ou de rapport (ministère de la Famille) ?
 3. Projet personnel, produit commercial, ou logiciel libre ?
-4. Base de données et frontend : voir les recommandations de la section 6.
+4. Base de données : PostgreSQL recommandé (section 6.2), à confirmer.
 5. Hébergeur (Azure, AWS, hébergeur québécois) ?
 
 Les questions propres à chaque fonctionnalité sont dans sa section.
@@ -396,3 +428,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-27 | Un enfant peut avoir plusieurs tuteurs, chacun avec son compte. Le personnel peut écrire au groupe, à l'enfant (tous ses tuteurs) ou à un tuteur en particulier. |
 | 2026-11-27 | Backend en .NET 10. Base de données et frontend à trancher (section 6). |
 | 2026-11-27 | Un tuteur peut écrire aux éducatrices du groupe ou à une éducatrice en particulier. Un tuteur ne voit jamais les informations personnelles d'un autre tuteur. |
+| 2026-11-27 | Frontend en React + TypeScript. Sécurité maximale, couverture de tests de plus de 80 %, tests de sécurité à chaque modification, tests e2e et revue de code par un autre agent. |
