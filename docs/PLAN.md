@@ -189,11 +189,12 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 **Objectif.** Permettre des échanges simples et traçables entre la famille et l'équipe.
 
 **Inclus**
-- Le parent écrit **à l'équipe du groupe** de son enfant; l'équipe répond; la direction voit les fils de son installation.
+- Le tuteur écrit **aux éducatrices du groupe** de son enfant, ou **à une éducatrice en particulier**; l'équipe répond; la direction voit les fils de son installation.
 - Le personnel (éducatrices, direction) choisit le **destinataire** d'un message :
   - **le groupe** : tous les tuteurs de tous les enfants du groupe;
   - **l'enfant** : l'ensemble de ses tuteurs;
   - **un tuteur en particulier** : seul ce tuteur voit le message et la conversation.
+- **Confidentialité entre tuteurs** : un tuteur ne voit **jamais les informations personnelles d'un autre tuteur** (adresse, téléphone, courriel, notes le concernant), même s'ils partagent le même enfant. Dans un message adressé à l'enfant ou au groupe, les destinataires ne voient pas les coordonnées des autres.
 - Annonces de **groupe** et d'**installation** (fermeture, sortie, rappel).
 - **Pièces jointes** (photos, vidéos, documents) dans les deux sens, versées au dossier de l'enfant (voir F6).
 - Notifications courriel et web, préférences réglables par le parent.
@@ -203,8 +204,7 @@ Légende : ✅ permis · 👁️ lecture seule · ➖ ses propres enfants seulem
 - Messagerie entre parents.
 
 **❓ Questions**
-- Garder aussi la possibilité d'écrire à une éducatrice précise ?
-- Quand un tuteur écrit à l'équipe, sa conversation est-elle visible par les autres tuteurs de l'enfant, ou seulement par lui ?
+- Quand un tuteur écrit à l'équipe, sa conversation est-elle visible par les autres tuteurs de l'enfant, ou seulement par lui ? (Pas encore décidé; dans tous les cas, ses informations personnelles restent cachées.)
 - Garde partagée avec restrictions (ex. ordonnance du tribunal) : faut-il pouvoir limiter ce qu'un tuteur voit ou reçoit ?
 - Plages horaires de la messagerie (éviter les notifications à 22 h au personnel) ?
 
@@ -395,3 +395,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-25 | Chaque enfant a un groupe d'attache fixe, et peut être placé dans un groupe éphémère quand il n'y a pas assez d'enfants. |
 | 2026-11-27 | Un enfant peut avoir plusieurs tuteurs, chacun avec son compte. Le personnel peut écrire au groupe, à l'enfant (tous ses tuteurs) ou à un tuteur en particulier. |
 | 2026-11-27 | Backend en .NET 10. Base de données et frontend à trancher (section 6). |
+| 2026-11-27 | Un tuteur peut écrire aux éducatrices du groupe ou à une éducatrice en particulier. Un tuteur ne voit jamais les informations personnelles d'un autre tuteur. |
