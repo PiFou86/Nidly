@@ -370,6 +370,19 @@ Objectif : **sécurité maximale**. Aucune modification n'est fusionnée sans pa
 - **Tests de permissions générés à partir de la matrice** (section 3.3) : pour chaque action, chaque rôle et chaque portée, un test vérifie que l'accès est accordé ou refusé, y compris l'accès d'une organisation aux données d'une autre et d'un tuteur aux informations d'un autre tuteur.
 - **Tests de bout en bout (e2e)** avec Playwright sur les parcours essentiels, pour chaque rôle : pointage des présences, saisie du journal, messagerie, dépôt d'un média, consultation par un parent, accès d'un ancien parent.
 
+**Linters** (exécutés en local avant chaque commit et dans la CI; un avertissement bloque la PR)
+
+| Technologie | Outils |
+|---|---|
+| C# / .NET | Analyseurs .NET (`AnalysisLevel` le plus strict), SonarAnalyzer.CSharp, `TreatWarningsAsErrors`, `dotnet format` avec un `.editorconfig` commun, types nullables activés |
+| TypeScript / React | ESLint (typescript-eslint en mode strict avec types, react, react-hooks, jsx-a11y pour l'accessibilité, règles de sécurité), `tsc --noEmit` en mode `strict`, Prettier |
+| CSS | Stylelint |
+| SQL (scripts et migrations brutes) | SQLFluff (dialecte PostgreSQL) |
+| Docker | Hadolint |
+| GitHub Actions / YAML | actionlint, yamllint |
+| Scripts shell | ShellCheck |
+| Markdown (documentation) | markdownlint |
+
 **Tests de sécurité à chaque ajout ou modification** (dans la CI de chaque PR)
 - **Analyse statique** du code (SAST), par exemple CodeQL ou Semgrep, sur C# et TypeScript.
 - **Analyse des dépendances** vulnérables (Dependabot, `dotnet list package --vulnerable`, `npm audit`) et des **secrets** commis par erreur.
@@ -429,3 +442,4 @@ Les questions propres à chaque fonctionnalité sont dans sa section.
 | 2026-11-27 | Backend en .NET 10. Base de données et frontend à trancher (section 6). |
 | 2026-11-27 | Un tuteur peut écrire aux éducatrices du groupe ou à une éducatrice en particulier. Un tuteur ne voit jamais les informations personnelles d'un autre tuteur. |
 | 2026-11-27 | Frontend en React + TypeScript. Sécurité maximale, couverture de tests de plus de 80 %, tests de sécurité à chaque modification, tests e2e et revue de code par un autre agent. |
+| 2026-11-27 | Un linter pour chaque technologie, bloquant dans la CI. |
